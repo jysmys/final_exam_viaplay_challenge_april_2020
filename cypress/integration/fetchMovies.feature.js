@@ -1,13 +1,15 @@
 describe("Main view is shown", () => {
   beforeEach(() => {
     cy.server();
-    cy.route({
-      method: "GET",
-      url: "https://content.viaplay.se/pc-se/serier/samtliga",
-      response: "fixture:movie_list.json",
-    });
+    // cy.route({
+    //   method: "GET",
+    //   url: "**/pc-se/serier/samtliga*",
+    //   response: "fixture:movie_list.json",
+    // });
   });
   it("displays movies", () => {
+    cy.visit("/");
+
     cy.get("#header").should("contain", "ViaPlay");
   });
 });

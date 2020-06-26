@@ -5,7 +5,7 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import axios from "axios";
 
-axios.defaults.baseURL = "https://content.viaplay.se";
+axios.defaults.baseURL = "https://cors-anywhere.herokuapp.com/https://content.viaplay.se";
 
 ReactDOM.render(
   <React.StrictMode>
