@@ -3,7 +3,7 @@ describe("Main view is shown", () => {
     cy.server();
     cy.route({
       method: "GET",
-      url: "http://localhost:3000/pc-se/serier/samtliga",
+      url: "https://content.viaplay.se/pc-se/serier/samtliga",
       response: "fixture:movie_list.json",
     });
   });
