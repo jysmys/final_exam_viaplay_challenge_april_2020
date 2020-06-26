@@ -10,6 +10,6 @@ describe("Main view is shown", () => {
   it("displays movies", () => {
     cy.visit("/");
 
-    cy.get("#header").should("contain", "ViaPlay");
+    cy.get(".display-show").should("be.visible");
   });
 });

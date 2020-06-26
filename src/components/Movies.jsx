@@ -8,9 +8,6 @@ const Movies = () => {
   const getSearch = async () => {
     try {
       const response = await axios.get("/pc-se/serier/samtliga");
-      debugger;
-      // yourDataObject._embedded['viaplay:blocks'][0]._embedded['viaplay:products']
-
       setMoviesList(
         response.data._embedded["viaplay:blocks"][0]._embedded[
           "viaplay:products"
@@ -24,16 +21,15 @@ const Movies = () => {
     getSearch();
   }, []);
 
-  const show = moviesList.map((movie) => {
-    debugger;
-    return <div className="display-show"></div>;
+  const show = moviesList.map((movie, index) => {
+    return (
+      <div className="display-show" key={index}>
+        <img src={movie.content.images.boxart.url} />
+      </div>
+    );
   });
 
-  return (
-    <Container>
-      <p>Hej</p>
-    </Container>
-  );
+  return <div>{show}</div>;
 };
 
 export default Movies;
